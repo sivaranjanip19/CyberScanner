@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Scan Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+
+    <h1>Scan Result</h1>
+
+    <h3>Target IP</h3>
+    <p>{{ ip }}</p>
+
+    <h3>Scan Status</h3>
+    <p>Completed Successfully</p>
+
+    <h3>Open Ports</h3>
+    <ul>
+        {% for port in ports %}
+            <li>{{ port }}</li>
+        {% endfor %}
+    </ul>
+
+    <h3>Risk Level</h3>
+    <h2 style="color:{{ color }}">{{ risk }}</h2>
+
+    <h3>Recommendations</h3>
+    <ul>
+        <li>Keep software updated</li>
+        <li>Enable firewall protection</li>
+        <li>Use strong passwords</li>
+        <li>Monitor network traffic</li>
+    </ul>
+
+    <br>
+
+    <div style="margin-top:30px;">
+
+    <a href="/scan">
+        <button>⬅ Back to Scan</button>
+    </a>
+
+    <a href="/report">
+        <button>📄 View Report</button>
+    </a>
+
+</div>
+
+</div>
+
+</body>
+</html>
