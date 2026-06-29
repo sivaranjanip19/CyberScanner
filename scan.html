@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scan Target</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<header>
+    <h1>🛡 CyberScanner</h1>
+    <nav>
+        <a href="/">Home</a>
+        <a href="/dashboard">Dashboard</a>
+        <a href="/scan">Scan</a>
+        <a href="/report">Reports</a>
+    </nav>
+</header>
+
+<div class="container">
+
+<h2>🎯 Vulnerability Scan</h2>
+
+<form action="/loading" method="GET">
+
+<input
+type="text"
+name="ip"
+placeholder="Enter Target IP Address"
+required>
+
+<br><br>
+
+<button type="submit">
+Start Scan
+</button>
+
+</form>
+
+</div>
+
+</body>
+</html>

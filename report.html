@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CyberScanner Report</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<header>
+    <h1>🛡 CyberScanner</h1>
+    <nav>
+        <a href="/">Home</a>
+        <a href="/dashboard">Dashboard</a>
+        <a href="/scan">Scan</a>
+        <a href="/report">Report</a>
+    </nav>
+</header>
+
+<div class="container">
+
+    <h2>📄 Security Assessment Report</h2>
+    <h3>Report ID</h3>
+    <p>{{ report_id }}</p>
+
+    <div class="result-box">
+
+        <h3>Project</h3>
+        <p>CyberScanner - Vulnerability Scanning & Risk Assessment</p>
+
+        <h3>Target IP</h3>
+        <p>{{ ip }}</p>
+
+        <h3>Scan Status</h3>
+        <p>✅ Completed Successfully</p>
+
+        <h3>Open Ports</h3>
+        <ul>
+{% for port in ports %}
+    <li>Port {{ port }}</li>
+{% endfor %}
+</ul>
+
+        <h3>Risk Level</h3>
+        <h2 style="color:{{ color }}">{{ risk }}</h2>
+
+        <h3>Security Recommendations</h3>
+        <ul>
+            <li>✔ Keep your operating system updated.</li>
+            <li>✔ Enable the firewall.</li>
+            <li>✔ Disable unused services.</li>
+            <li>✔ Use strong passwords.</li>
+            <li>✔ Scan your system regularly.</li>
+        </ul>
+
+        <h3>Scan Date & Time</h3>
+        <p>{{ date }}</p>
+
+        <br>
+
+        <button onclick="window.print()">🖨 Print Report</button>
+
+        <a href="/dashboard">
+            <button>⬅ Back to Dashboard</button>
+        </a>
+        <a href="/report">
+            <button>📄 View Report</button>
+        </a>
+        
+
+    </div>
+
+</div>
+
+</body>
+</html>

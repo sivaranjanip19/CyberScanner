@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Scanning...</title>
+    <meta http-equiv="refresh" content="3;url={{ url_for('result') }}?ip={{ ip }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+
+    <h1>🛡 CyberScanner</h1>
+
+    <h2>Scanning Target...</h2>
+
+    <h3>{{ ip }}</h3>
+
+    <br>
+
+    <progress value="80" max="100"></progress>
+
+    <p>✔ Checking Open Ports...</p>
+    <p>✔ Analyzing Services...</p>
+    <p>✔ Calculating Risk...</p>
+    <p>✔ Generating Report...</p>
+
+    <h3>Please wait...</h3>
+
+</div>
+
+</body>
+</html>
